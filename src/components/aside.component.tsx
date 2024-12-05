@@ -35,7 +35,7 @@ export function ASide() {
         getItem('Основные генераторы', 'grp1', null, [
             getItem('Запускатор', '/generator/starter', <ThunderboltOutlined />),
             getItem('Конфигурация', '/generator/servercfg', <ToolOutlined />),
-            getItem('Workshop', '/generator/workshop', <BuildOutlined />),
+            // getItem('Workshop', '/generator/workshop', <BuildOutlined />),
         ], 'group'),
         getItem('Моделирование', 'grp5', null, [
             getItem('QC файл', '/generator/modeling/qc', <CodepenOutlined />),

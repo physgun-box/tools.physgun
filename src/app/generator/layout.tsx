@@ -24,9 +24,6 @@ export default function Layout({children,}: { children: React.ReactNode }) {
                             <a href="/"><Image className={"ms-5 me-10"} src={logo} alt={"Logo"} width={120} height={100} /></a>
                             <Links/>
                         </div>
-                        <div className="flex flex-row gap-3">
-                            <ProfileComponent/>
-                        </div>
                     </div>
                 </div>
                 <Garland/>
@@ -41,7 +38,7 @@ export default function Layout({children,}: { children: React.ReactNode }) {
                                 <span className={"absolute top-2 right-2 bg-blue-500 text-white px-2 py-0.5 rounded-full text-[12px]"}>Новое</span>
                             </Link>
                             <Link className={"flex-1 rounded-lg overflow-hidden border border-neutral-900 shadow-lg"} href={"/generator/gmdonate/donate"}><Image className={"w-full"} src={banner_2} alt={"Баннер генератора"}/></Link>
-                            <Link className={"flex-1 rounded-lg overflow-hidden border border-neutral-900 shadow-lg"} href={"/generator/workshop"}><Image className={"w-full"} src={banner_3} alt={"Баннер генератора"}/></Link>
+                            <Link className={"flex-1 rounded-lg overflow-hidden border border-neutral-900 shadow-lg"} href={"/"}><Image className={"w-full"} src={banner_3} alt={"Баннер генератора"}/></Link>
                             <Link className={"flex-1 rounded-lg overflow-hidden border border-neutral-900 shadow-lg"} href={"/generator/modeling/qc"}><Image className={"w-full"} src={banner_4} alt={"Баннер генератора"}/></Link>
                         </div>
                         <div className="p-5 bg-neutral-900 rounded-2xl flex-1">

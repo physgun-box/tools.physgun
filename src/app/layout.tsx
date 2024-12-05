@@ -1,5 +1,5 @@
-import {AuthProvider} from "@/contexts/auth.context";
 import React from "react";
+import ReactDOM from "react-dom";
 import './globals.css'
 import StyledComponentsRegistry from "@/contexts/css.context";
 import Script from "next/script";
@@ -8,9 +8,7 @@ export default function RootLayout({children,}: { children: React.ReactNode }) {
         <html lang="ru" suppressHydrationWarning={true}>
           <body suppressHydrationWarning={true}>
               <StyledComponentsRegistry>
-                    <AuthProvider>
-                        {children}
-                    </AuthProvider>
+                  {children}
               </StyledComponentsRegistry>
           </body>
           <Script async id="metrika-counter" strategy="afterInteractive">

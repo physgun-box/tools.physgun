@@ -24,7 +24,7 @@ export const metadata: Metadata = {
 export default function Home() {
   return (
       <Layout>
-        <NewsLetters/>
+        <p>Привет!</p>
       </Layout>
   )
 }
