@@ -7,7 +7,7 @@ FROM node:lts as builder
 WORKDIR /physgun
 COPY . .
 COPY --from=dependencies /physgun/node_modules ./node_modules
-RUN npm build
+RUN npm run build
 
 FROM node:lts as runner
 WORKDIR /physgun
