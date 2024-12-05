@@ -17,7 +17,7 @@ COPY . .
 EXPOSE 5551
 
 # Установка
-RUN [ "npm", "install"]
+RUN [ "npm", "install","--force"]
 
 #Билд
 RUN [ "npm", "run", "build"]

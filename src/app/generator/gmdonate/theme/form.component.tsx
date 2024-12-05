@@ -2,7 +2,6 @@
 import React, {useState} from "react";
 import {Alert, Button, ColorPicker, Divider, Form} from "antd";
 import {CopyOutlined, HomeFilled} from "@ant-design/icons";
-import {FieldData} from "rc-field-form/es/interface";
 import Image from "next/image";
 import bgOver from "@/assets/bg_over.jpg";
 
@@ -98,7 +97,7 @@ export default function FormComponent() {
         setGenerated(true);
     }
 
-    function rerenderTheme(all: FieldData[],formData: FieldData[]) {
+    function rerenderTheme(all: any[],formData: any[]) {
         all.map((col, _)=> {
             if (typeof(col.value) === "object") {
                 setColors({...colors, [col.name[0]]: col.value.toHex()})
