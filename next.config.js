@@ -1,7 +1,6 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
     distDir: 'build',
-    output: 'export',
     reactStrictMode: true,
     transpilePackages: ['antd'],
     images: {
@@ -12,7 +11,7 @@ const nextConfig = {
             }
         ]
     },
-    experimental: { optimizeCss: true, esmExternals: true, workerThreads: true, swcMinify: true },
+    experimental: { optimizeCss: true, esmExternals: true, workerThreads: false },
     poweredByHeader: false,
 }
 
