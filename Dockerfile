@@ -14,7 +14,7 @@ RUN npm install --force
 COPY . .
 
 # Определите порт, на котором будет работать ваш вебсайт
-EXPOSE 5551
+EXPOSE 3000
 
 # Установка
 RUN [ "npm", "install","--force"]
