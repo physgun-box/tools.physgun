@@ -1,26 +1,21 @@
-# Используйте официальный образ Node.js в качестве базового образа
-FROM node:latest
+FROM node:20 AS base
+WORKDIR /app
+RUN npm i -g pnpm
+COPY package.json pnpm-lock.yaml ./
 
-# Установите рабочую директорию внутри контейнера
-WORKDIR /usr/src/app
+RUN pnpm install
 
-# Скопируйте package.json и package-lock.json внутрь контейнера
-COPY package*.json ./
-
-# Установите зависимости
-RUN npm install
-
-# Скопируйте исходный код внутрь контейнера
 COPY . .
+RUN pnpm build
 
-# Определите порт, на котором будет работать ваш вебсайт
-EXPOSE 5551
+FROM node:20-alpine3.19 as release
+WORKDIR /app
+RUN npm i -g pnpm
 
-# Установка
-RUN [ "npm", "install"]
+COPY --from=base /app/node_modules ./node_modules
+COPY --from=base /app/package.json ./package.json
+COPY --from=base /app/.next ./.next
 
-#Билд
-RUN [ "npm", "run", "build"]
+EXPOSE 3000
 
-# Запустите приложение при старте контейнера
-CMD [ "npm", "run", "start" ]
+CMD ["pnpm", "start"]
