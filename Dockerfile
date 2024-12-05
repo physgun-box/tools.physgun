@@ -1,26 +1,22 @@
-# Используйте официальный образ Node.js в качестве базового образа
-FROM node:latest
-
-# Установите рабочую директорию внутри контейнера
-WORKDIR /usr/src/app
-
-# Скопируйте package.json и package-lock.json внутрь контейнера
-COPY package*.json ./
-
-# Установите зависимости
+FROM node:lts as dependencies
+WORKDIR /physgun
+COPY package.json package-lock.json ./
 RUN npm install --force
 
-# Скопируйте исходный код внутрь контейнера
+FROM node:lts as builder
+WORKDIR /physgun
 COPY . .
+COPY --from=dependencies /physgun/node_modules ./node_modules
+RUN npm build
 
-# Определите порт, на котором будет работать ваш вебсайт
+FROM node:lts as runner
+WORKDIR /physgun
+ENV NODE_ENV production
+
+COPY --from=builder /physgun/public ./public
+COPY --from=builder /physgun/package.json ./package.json
+COPY --from=builder /physgun/.next ./.next
+COPY --from=builder /physgun/node_modules ./node_modules
+
 EXPOSE 3000
-
-# Установка
-RUN [ "npm", "install","--force"]
-
-#Билд
-RUN [ "npm", "run", "build"]
-
-# Запустите приложение при старте контейнера
-CMD [ "npm", "run", "start" ]
+CMD ["npm", "start"]
