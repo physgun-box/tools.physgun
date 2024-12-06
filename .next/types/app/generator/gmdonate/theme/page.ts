@@ -1,4 +1,4 @@
-// File: D:\Devhub\repos\github\physgun_addonsShop\physgun-app\physgun-ru\src\app\generator\gmdonate\theme\page.tsx
+// File: D:\Devhub\repos\pg\tools\src\app\generator\gmdonate\theme\page.tsx
 import * as entry from '../../../../../../src/app/generator/gmdonate/theme/page.js'
 import type { ResolvingMetadata, ResolvingViewport } from 'next/dist/lib/metadata/types/metadata-interface.js'
 

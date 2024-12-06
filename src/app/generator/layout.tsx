@@ -13,6 +13,7 @@ import banner_3 from "@/assets/banners/g3.png";
 import banner_4 from "@/assets/banners/g4.png";
 import banner_5 from "@/assets/banners/g5.png";
 import Link from "next/link";
+import Script from "next/script";
 export default function Layout({children,}: { children: React.ReactNode }) {
 
     return (
@@ -22,7 +23,9 @@ export default function Layout({children,}: { children: React.ReactNode }) {
                     <div className="flex flex-row justify-between">
                         <div className="flex flex-row gap-2">
                             <a href="/"><Image className={"ms-5 me-10"} src={logo} alt={"Logo"} width={120} height={100} /></a>
-                            <Links/>
+                        </div>
+                        <div className="flex flex-row">
+                        <Links/>
                         </div>
                     </div>
                 </div>
@@ -30,16 +33,36 @@ export default function Layout({children,}: { children: React.ReactNode }) {
             </header>
             <div className={"container mx-auto"}>
                 <div className={"flex flex-row gap-5"}>
-                    <ASide/>
+                    <div className="flex flex-col gap-5">
+                        <ASide/>
+                        <div
+                            className="flex overflow-hidden flex-row border h-[300px] border-dashed rounded-xl border-zinc-600 text-sm text-zinc-500">
+                            <div id="yandex_rtb_R-A-13227626-1" className="flex-1 w-[240px] h-[400px]"></div>
+                        </div>
+                    </div>
+
                     <div className="flex flex-col flex-1 mb-10">
+                        <div
+                            className="flex flex-col overflow-hidden border h-[130px] mb-4 border-dashed rounded-xl border-zinc-600 text-sm text-zinc-500">
+                            <div id="yandex_rtb_R-A-13227626-2" className="w-full flex-1 h-[130px]"></div>
+                        </div>
                         <div className="flex flex-row gap-3 w-full mb-5">
-                            <Link className={"flex-1 rounded-lg overflow-hidden border border-neutral-900 shadow-lg relative"} href={"/generator/gmdonate/theme"}>
+                            <Link
+                                className={"flex-1 rounded-lg overflow-hidden border border-neutral-900 shadow-lg relative"}
+                                href={"/generator/gmdonate/theme"}>
                                 <Image className={"w-full"} src={banner_1} alt={"Баннер генератора"}/>
-                                <span className={"absolute top-2 right-2 bg-blue-500 text-white px-2 py-0.5 rounded-full text-[12px]"}>Новое</span>
+                                <span
+                                    className={"absolute top-2 right-2 bg-blue-500 text-white px-2 py-0.5 rounded-full text-[12px]"}>Новое</span>
                             </Link>
-                            <Link className={"flex-1 rounded-lg overflow-hidden border border-neutral-900 shadow-lg"} href={"/generator/gmdonate/donate"}><Image className={"w-full"} src={banner_2} alt={"Баннер генератора"}/></Link>
-                            <Link className={"flex-1 rounded-lg overflow-hidden border border-neutral-900 shadow-lg"} href={"/"}><Image className={"w-full"} src={banner_3} alt={"Баннер генератора"}/></Link>
-                            <Link className={"flex-1 rounded-lg overflow-hidden border border-neutral-900 shadow-lg"} href={"/generator/modeling/qc"}><Image className={"w-full"} src={banner_4} alt={"Баннер генератора"}/></Link>
+                            <Link className={"flex-1 rounded-lg overflow-hidden border border-neutral-900 shadow-lg"}
+                                  href={"/generator/gmdonate/donate"}><Image className={"w-full"} src={banner_2}
+                                                                             alt={"Баннер генератора"}/></Link>
+                            <Link className={"flex-1 rounded-lg overflow-hidden border border-neutral-900 shadow-lg"}
+                                  href={"/"}><Image className={"w-full"} src={banner_3}
+                                                    alt={"Баннер генератора"}/></Link>
+                            <Link className={"flex-1 rounded-lg overflow-hidden border border-neutral-900 shadow-lg"}
+                                  href={"/generator/modeling/qc"}><Image className={"w-full"} src={banner_4}
+                                                                         alt={"Баннер генератора"}/></Link>
                         </div>
                         <div className="p-5 bg-neutral-900 rounded-2xl flex-1">
                             {children}
@@ -47,7 +70,22 @@ export default function Layout({children,}: { children: React.ReactNode }) {
                     </div>
                 </div>
             </div>
-            
+            <Script>
+                {`
+          window.yaContextCb.push(() => {
+                Ya.Context.AdvManager.render({
+                    "blockId": "R-A-13227626-1",
+                    "renderTo": "yandex_rtb_R-A-13227626-1"
+                })
+            })
+            window.yaContextCb.push(() => {
+    Ya.Context.AdvManager.render({
+        "blockId": "R-A-13227626-2",
+        "renderTo": "yandex_rtb_R-A-13227626-2"
+    })
+})
+          `}
+            </Script>
         </div>
     )
 }

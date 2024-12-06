@@ -4,7 +4,6 @@ import hero from "@/assets/heros/gmdonate.png";
 import {Alert, Divider} from "antd";
 import React from "react";
 import {Metadata} from "next";
-import Head from "next/head";
 import Script from "next/script";
 
 export const metadata: Metadata = {
