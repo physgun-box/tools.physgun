@@ -42,10 +42,6 @@ export default function Layout({children,}: { children: React.ReactNode }) {
                     </div>
 
                     <div className="flex flex-col flex-1 mb-10">
-                        <div
-                            className="flex flex-col overflow-hidden border h-[130px] mb-4 border-dashed rounded-xl border-zinc-600 text-sm text-zinc-500">
-                            <div id="yandex_rtb_R-A-13227626-2" className="w-full flex-1 h-[130px]"></div>
-                        </div>
                         <div className="flex flex-row gap-3 w-full mb-5">
                             <Link
                                 className={"flex-1 rounded-lg overflow-hidden border border-neutral-900 shadow-lg relative"}
@@ -78,12 +74,6 @@ export default function Layout({children,}: { children: React.ReactNode }) {
                     "renderTo": "yandex_rtb_R-A-13227626-1"
                 })
             })
-            window.yaContextCb.push(() => {
-    Ya.Context.AdvManager.render({
-        "blockId": "R-A-13227626-2",
-        "renderTo": "yandex_rtb_R-A-13227626-2"
-    })
-})
           `}
             </Script>
         </div>
