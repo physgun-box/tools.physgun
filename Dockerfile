@@ -16,7 +16,7 @@ COPY . .
 RUN npm run build
 
 # Expose port 3000 to the Docker daemon so it can communicate
-EXPOSE 80
+EXPOSE 3000
 
 # Run the Next.js start script
 CMD ["npm", "start"]
