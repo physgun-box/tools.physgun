@@ -40,9 +40,9 @@ export function ASide() {
         getItem('Моделирование', 'grp5', null, [
             getItem('QC файл', '/generator/modeling/qc', <CodepenOutlined />),
         ], 'group'),
-        // getItem('Другое', 'grp6', null, [
-        //     getItem('Анализ Crash Dump', '/generator/other/crashdump', <WarningOutlined />),
-        // ], 'group'),
+        getItem('Другое', 'grp6', null, [
+            getItem('Анализ Crash Dump', '/tools/mdmp', <WarningOutlined />),
+        ], 'group'),
         getItem('GM-Donate', 'grp4', null, [
             getItem('Донат продукт', '/generator/gmdonate/donate', <DollarOutlined />),
             getItem('Тема меню', '/generator/gmdonate/theme', <HighlightOutlined />),

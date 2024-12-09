@@ -1,13 +1,15 @@
 {
-  "/sitemap.xml/route": "app/sitemap.xml/route.js",
-  "/robots.txt/route": "app/robots.txt/route.js",
-  "/favicon.ico/route": "app/favicon.ico/route.js",
+  "/api/mdmp/route": "app/api/mdmp/route.js",
   "/_not-found/page": "app/_not-found/page.js",
+  "/favicon.ico/route": "app/favicon.ico/route.js",
+  "/robots.txt/route": "app/robots.txt/route.js",
+  "/sitemap.xml/route": "app/sitemap.xml/route.js",
+  "/page": "app/page.js",
   "/generator/gmdonate/donate/page": "app/generator/gmdonate/donate/page.js",
-  "/generator/starter/page": "app/generator/starter/page.js",
-  "/generator/gmdonate/theme/page": "app/generator/gmdonate/theme/page.js",
-  "/generator/servercfg/page": "app/generator/servercfg/page.js",
   "/generator/modeling/qc/page": "app/generator/modeling/qc/page.js",
+  "/generator/gmdonate/theme/page": "app/generator/gmdonate/theme/page.js",
+  "/generator/starter/page": "app/generator/starter/page.js",
+  "/tools/mdmp/page": "app/tools/mdmp/page.js",
   "/generator/workshop/page": "app/generator/workshop/page.js",
-  "/page": "app/page.js"
+  "/generator/servercfg/page": "app/generator/servercfg/page.js"
 }
