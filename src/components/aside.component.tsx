@@ -46,6 +46,9 @@ export function ASide() {
         getItem('GM-Donate', 'grp4', null, [
             getItem('Донат продукт', '/generator/gmdonate/donate', <DollarOutlined />),
             getItem('Тема меню', '/generator/gmdonate/theme', <HighlightOutlined />),
+        ], 'group'),
+        getItem('DarkRP', 'grp9', null, [
+            getItem('Профессия', '/generator/darkrp/job', <DollarOutlined />),
         ], 'group')
     ];
 
